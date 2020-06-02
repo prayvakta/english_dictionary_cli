@@ -26,6 +26,8 @@ def lookup(word):
         return data[word]
     elif word.title() in data.keys():
         return data[word.title()]
+    elif word.upper() in data.keys():
+        return data[word.upper()]
     else:
         return recommend_word(word)
 
