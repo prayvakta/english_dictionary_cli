@@ -17,13 +17,15 @@ def recommend_word(unmatched_word):
             return(lookup(user_new_word))
         else:
             return ('Sorry, unrecognized input!!')
-    else:     
+    else:
         return "The word doesn't exist! Please check the spelling."
 
 def lookup(word):
     word = word.lower()
     if word in data.keys():
         return data[word]
+    elif word.title() in data.keys():
+        return data[word.title()]
     else:
         return recommend_word(word)
 
